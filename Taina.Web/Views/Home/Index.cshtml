@@ -1,0 +1,34 @@
+﻿@model IEnumerable<Taina.Data.Models.Person>
+
+@{
+	ViewBag.Title = "Home Page";
+}
+
+<h2>Index</h2>
+
+<p>@Html.ActionLink("Add New Person", "Create")</p>
+
+<table class="table">
+	<tr>
+		<th>Name</th>
+	</tr>
+
+	@foreach (var person in Model)
+	{
+		<tr>
+			<td>
+				@Html.DisplayFor(modelItem => person.FirstName)
+				@Html.DisplayFor(modelItem => person.Surname)
+			</td>
+			<td>
+				@Html.ActionLink("Edit", "Edit", new { id = person.Id }) |
+				@Html.ActionLink("Details", "Details", new { id = person.Id }) |
+				@Html.ActionLink("Delete", "Delete", new { id = person.Id })
+			</td>
+		</tr>
+	}
+</table>
+
+<script>
+	document.getElementById("");
+</script>
